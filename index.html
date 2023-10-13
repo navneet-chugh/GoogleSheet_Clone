@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Googlesheet Clone</title>
+    <link
+      rel="shortcut icon"
+      href="Assets/Microsoft_Excel-Logo.wine.svg"
+      type="image/x-icon"
+    />
+    <!-- Font Awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navigation">
+      <ol>
+        <button>File</button>
+        <button class="home">Home</button>
+        <button>Insert</button>
+        <button>Layout</button>
+        <button>Help</button>
+      </ol>
+    </div>
+    <div class="tools">
+      <div class="edit-tools">
+        <i id="copy" class="fa-solid fa-copy" style="color: #000000"></i>
+        <i id="cut" class="fa-solid fa-scissors" style="color: #000000"></i>
+        <i
+          id="paste"
+          class="fa-regular fa-paste fa-solid"
+          style="color: #000000"
+        ></i>
+
+        <select id="font-family">
+          <option value="Rubik">Rubik</option>
+          <option value="Poppins">Poppins</option>
+          <option value="Montserrat">Montserrat</option>
+          <option value="Work-Sans">Work-Sans</option>
+          <option value="DM-Sans">DM-Sans</option>
+        </select>
+
+        <select id="font-size">
+          <option value="10px">10</option>
+          <option value="12px">12</option>
+          <option selected value="14px">14</option>
+          <option value="16px">16</option>
+          <option value="18px">18</option>
+          <option value="20px">20</option>
+        </select>
+
+        <i
+          id="bold"
+          class="fa-solid fa-bold bold left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+        <i
+          id="italic"
+          class="fa-solid fa-italic italic left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+        <i
+          id="underline"
+          class="fa-solid fa-underline underline left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+        <i
+          id="align-left"
+          class="fa-solid fa-align-left left-align left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+        <i
+          id="align-center"
+          class="fa-solid fa-align-center center-align left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+        <i
+          id="align-right"
+          class="fa-solid fa-align-right right-align left-icon"
+          style="color: rgb(0, 0, 0)"
+        ></i>
+
+        <div class="text-color">
+          <img
+            src="Assets/font color.png"
+            class="fa-solid left-icon"
+            width="30px"
+          />
+          <input type="color" id="fontColor" />
+        </div>
+
+        <div class="cell-color">
+          <i
+            class="fa-solid fa-droplet bg-color left-icon"
+            style="color: #000000"
+          ></i>
+          <input type="color" id="cellColor" />
+        </div>
+
+        <i
+          id="save"
+          class="fa-regular fa-floppy-disk fa-solid left-icon"
+          style="color: #000000"
+        ></i>
+        <i
+          id="upload"
+          class="fa-solid fa-upload left-icon"
+          style="color: #000000"
+        >
+          <input type="file" accept=".json"
+        /></i>
+      </div>
+      <div class="filter-tools">
+        <input type="text" id="selected-cell" readonly value="A1" />
+        <label><img src="Assets/fx.png" class="fa-solid" width="20px" /></label>
+        <input class="search" type="text" />
+      </div>
+    </div>
+    <div class="main-sheet">
+      <table id="table">
+        <thead>
+          <tr id="thead">
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <button id="add-sheet">
+        <i class="fa-solid fa-plus add-sheet" style="color: #000000"></i>
+      </button>
+      <div id="sheets-holder">
+        <button id="sheet-1" class="sheet-button selected-sheet" onclick="viewSheet(event)" oncontextmenu="deleteSheet(event)" >Sheet 1</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
